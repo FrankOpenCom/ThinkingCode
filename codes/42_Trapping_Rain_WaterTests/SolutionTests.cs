@@ -1,0 +1,20 @@
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using _42_Trapping_Rain_Water;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace _42_Trapping_Rain_Water.Tests
+{
+    [TestClass()]
+    public class SolutionTests
+    {
+        [TestMethod()]
+        public void TrapTest()
+        {
+            Solution S = new Solution();
+            int [] input = new int[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 };
+            Assert.IsTrue(S.Trap(input) == 6);
+        }
+    }
+}
