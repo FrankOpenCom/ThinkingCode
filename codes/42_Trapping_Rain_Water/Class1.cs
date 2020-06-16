@@ -8,6 +8,7 @@ namespace _42_Trapping_Rain_Water
         {
             int ability = 0;
             bool leftBar = false;
+            bool onlyOneBar = true;
             int cAbility = 0;
 
             for (int i=0; i < height.Length; )
@@ -23,6 +24,7 @@ namespace _42_Trapping_Rain_Water
                     else
                     {
                         ability += cAbility;
+                        onlyOneBar = false;
                     }
                     cAbility = 0;
                 }
@@ -35,12 +37,13 @@ namespace _42_Trapping_Rain_Water
 
                 if ((i + 1) == height.Length)
                 {
-                    if (leftBar == false) break;
+                    if (leftBar == false || onlyOneBar == true) break;
                     else
                     {
                         i = 0;
                         leftBar = false;
                         cAbility = 0;
+                        onlyOneBar = true;
                     }
                 }
                 else ++i;
