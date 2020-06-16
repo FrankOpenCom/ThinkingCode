@@ -11,7 +11,6 @@ namespace _42_Trapping_Rain_Water
 
             int[] water = new int[height.Length];
             int highest = height[0];
-            int higher = 0;
 
             for (int i=0; i<height.Length; i++)
             {
@@ -19,12 +18,10 @@ namespace _42_Trapping_Rain_Water
                 if (bar == highest)
                 {
                     water[i] = 0;
-                    higher = 0;
                 }
                 else if (bar < highest)
                 {
                     water[i] = highest - bar;
-                    if (bar > higher) higher = bar;
                 }
                 else if (bar > highest)
                 {
@@ -35,23 +32,16 @@ namespace _42_Trapping_Rain_Water
 
             if (water.Last() > 0)
             {
-                bool foundHigher = false;
+                highest = height.Last();
                 for (int i = water.Length-1; i>=0 && water[i] > 0; --i)
                 {
-                    if (higher == height[i] && foundHigher == false)
+                    if (highest == height[i]) water[i] = 0;
+                    else if (highest > height[i]) water[i] = highest - height[i];
+                    else 
                     {
-                        foundHigher = true;
+                        highest = height[i];
                         water[i] = 0;
-                        continue;
-                    }
-                        
-
-                    if (foundHigher == false) water[i] = 0;
-                    else
-                    {
-                        if (higher == height[i]) water[i] = 0;
-                        else water[i] = higher - height[i];
-                    }
+                    }  
                 }
             }
 
