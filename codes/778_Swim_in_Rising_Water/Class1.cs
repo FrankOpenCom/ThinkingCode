@@ -14,13 +14,13 @@ namespace _778_Swim_in_Rising_Water
             }
  
 
-            int t = -1;
+            int t = int.MaxValue;
             List<(int i, int j)> path = new List<(int i, int j)>
             {
                 (0, 0)
             };
-            Swimming(ref t, 0, path, (0, 0), (grid.GetLength(0) - 1, grid.GetLength(0) - 1), grid);
-            return (t < 0)? 0:t;
+            Swimming(ref t, grid[0][0], path, (0, 0), (grid.GetLength(0) - 1, grid.GetLength(0) - 1), grid);
+            return t;
         }
 
         /*
@@ -30,14 +30,16 @@ namespace _778_Swim_in_Rising_Water
         {
             if (current == destination)
             {
-                if (maxTime < 0 || maxTime > elevation) maxTime = elevation;
+                if (maxTime > elevation) maxTime = elevation;
                 return;
             }
 
-            if (maxTime > 0 && maxTime <= elevation) return;
+            if (elevation >= maxTime) return;
+
+            if (maxTime == grid[grid.GetLength(0) - 1][grid.GetLength(0) - 1]) return;
 
             //Right
-            if (((current.i + 1 + 1) <= grid.GetLength(0)) && !path.Contains((current.i + 1, current.j)))
+            if (((current.i + 1 + 1) <= grid.GetLength(0)) && !path.Contains((current.i + 1, current.j)) && grid[current.i + 1][current.j] < maxTime)
             {
                 path.Add((current.i + 1, current.j));
                 Swimming(ref maxTime, (grid[current.i + 1][current.j] > elevation)? grid[current.i + 1][current.j] : elevation,
@@ -45,10 +47,17 @@ namespace _778_Swim_in_Rising_Water
                 path.RemoveAt(path.Count - 1);
             }
 
-            if (maxTime > 0 && maxTime <= elevation) return;
+            //Down
+            if (((current.j + 1 + 1) <= grid.GetLength(0)) && !path.Contains((current.i, current.j + 1)) && grid[current.i][current.j + 1] < maxTime)
+            {
+                path.Add((current.i, current.j + 1));
+                Swimming(ref maxTime, (grid[current.i][current.j + 1] > elevation) ? grid[current.i][current.j + 1] : elevation,
+                    path, (current.i, current.j + 1), destination, grid);
+                path.RemoveAt(path.Count - 1);
+            }
 
             //Left
-            if (((current.i - 1) >= 0) && !path.Contains((current.i - 1, current.j)))
+            if (((current.i - 1) >= 0) && !path.Contains((current.i - 1, current.j)) && grid[current.i - 1][current.j] < maxTime)
             {
                 path.Add((current.i - 1, current.j));
                 Swimming(ref maxTime, (grid[current.i - 1][current.j] > elevation) ? grid[current.i - 1][current.j] : elevation,
@@ -56,25 +65,12 @@ namespace _778_Swim_in_Rising_Water
                 path.RemoveAt(path.Count - 1);
             }
 
-            if (maxTime > 0 && maxTime <= elevation) return;
-
             //Up
-            if (((current.j - 1) >= 0) && !path.Contains((current.i, current.j - 1)))
+            if (((current.j - 1) >= 0) && !path.Contains((current.i, current.j - 1)) && grid[current.i][current.j - 1] < maxTime)
             {
                 path.Add((current.i, current.j - 1));
                 Swimming(ref maxTime, (grid[current.i][current.j-1] > elevation) ? grid[current.i][current.j-1] : elevation,
                     path, (current.i, current.j - 1), destination, grid);
-                path.RemoveAt(path.Count - 1);
-            }
-
-            if (maxTime > 0 && maxTime <= elevation) return;
-
-            //Down
-            if (((current.j + 1 + 1) <= grid.GetLength(0)) && !path.Contains((current.i, current.j + 1)))
-            {
-                path.Add((current.i, current.j + 1));
-                Swimming(ref maxTime, (grid[current.i][current.j + 1] > elevation) ? grid[current.i][current.j + 1] : elevation,
-                    path, (current.i, current.j + 1), destination, grid);
                 path.RemoveAt(path.Count - 1);
             }
 
