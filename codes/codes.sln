@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "42_Trapping_Rain_WaterTests
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "778_Swim_in_Rising_Water", "778_Swim_in_Rising_Water\778_Swim_in_Rising_Water.csproj", "{145CA416-FED4-43E5-8EF0-49ECD49D545D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "778_Swim_in_Rising_WaterTests", "778_Swim_in_Rising_WaterTests\778_Swim_in_Rising_WaterTests.csproj", "{34131E31-45A5-4ABF-9AD1-7557D62AD2C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "778_Swim_in_Rising_WaterTests", "778_Swim_in_Rising_WaterTests\778_Swim_in_Rising_WaterTests.csproj", "{34131E31-45A5-4ABF-9AD1-7557D62AD2C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taps_Open_Water_Garden", "Taps_Open_Water_Garden\Taps_Open_Water_Garden.csproj", "{F438C073-52DA-4DBF-AE03-16D33335E37B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{34131E31-45A5-4ABF-9AD1-7557D62AD2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34131E31-45A5-4ABF-9AD1-7557D62AD2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34131E31-45A5-4ABF-9AD1-7557D62AD2C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F438C073-52DA-4DBF-AE03-16D33335E37B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F438C073-52DA-4DBF-AE03-16D33335E37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F438C073-52DA-4DBF-AE03-16D33335E37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F438C073-52DA-4DBF-AE03-16D33335E37B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
