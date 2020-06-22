@@ -44,13 +44,14 @@ namespace _778_Swim_in_Rising_Water
                     }
                 }
 
-                unVisitedPool = unVisitedPool.OrderBy(v => v.Value).ToDictionary(x => x.Key, x => x.Value);
+                //unVisitedPool = unVisitedPool.OrderBy(v => v.Value).ToDictionary(x => x.Key, x => x.Value);
+                var ordered = unVisitedPool.OrderBy(v => v.Value);
 
-                node = unVisitedPool.Keys.ElementAt(0);
+                node = ordered.ElementAt(0).Key;
                 if ((node.i, node.j) == (grid.Length - 1, grid.Length - 1)) 
-                    return unVisitedPool.Values.ElementAt(0);
+                    return unVisitedPool[node];
 
-                unVisitedPool.Remove((node.i, node.j));
+                unVisitedPool.Remove(node);
 
             }
 
