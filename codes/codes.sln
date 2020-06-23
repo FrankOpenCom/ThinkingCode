@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taps_Open_Water_Garden", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taps_Open_Water_GardenTests", "Taps_Open_Water_GardenTests\Taps_Open_Water_GardenTests.csproj", "{9C15765E-263B-4F94-8172-BC6F32F9FDF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "115_Distinct_Subsequences", "115_Distinct_Subsequences\115_Distinct_Subsequences.csproj", "{19208B02-6213-41BE-A8BC-15D5FE3BD7F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9C15765E-263B-4F94-8172-BC6F32F9FDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C15765E-263B-4F94-8172-BC6F32F9FDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C15765E-263B-4F94-8172-BC6F32F9FDF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19208B02-6213-41BE-A8BC-15D5FE3BD7F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19208B02-6213-41BE-A8BC-15D5FE3BD7F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19208B02-6213-41BE-A8BC-15D5FE3BD7F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19208B02-6213-41BE-A8BC-15D5FE3BD7F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
