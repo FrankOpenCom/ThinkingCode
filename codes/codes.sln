@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "778_Swim_in_Rising_WaterTes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taps_Open_Water_Garden", "Taps_Open_Water_Garden\Taps_Open_Water_Garden.csproj", "{F438C073-52DA-4DBF-AE03-16D33335E37B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taps_Open_Water_GardenTests", "Taps_Open_Water_GardenTests\Taps_Open_Water_GardenTests.csproj", "{9C15765E-263B-4F94-8172-BC6F32F9FDF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F438C073-52DA-4DBF-AE03-16D33335E37B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F438C073-52DA-4DBF-AE03-16D33335E37B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F438C073-52DA-4DBF-AE03-16D33335E37B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C15765E-263B-4F94-8172-BC6F32F9FDF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C15765E-263B-4F94-8172-BC6F32F9FDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C15765E-263B-4F94-8172-BC6F32F9FDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C15765E-263B-4F94-8172-BC6F32F9FDF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
