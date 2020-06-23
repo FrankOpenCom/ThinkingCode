@@ -15,6 +15,56 @@ namespace Taps_Open_Water_Garden
         public int MinTaps(int n, int[] ranges)
         {
             SortedList<int, int> taps = new SortedList<int, int>();
+
+            for (int i = 0; i < ranges.Length; ++i)
+            {
+                if (ranges[i] == 0) continue;
+                int l = (i - ranges[i] < 0) ? 0 : i - ranges[i];
+                int r = (i + ranges[i] > n) ? n : i + ranges[i];
+                if (taps.ContainsKey(l))
+                {
+                    if (taps[l] < r) taps[l] = r;
+                }
+                else
+                {
+                    taps.Add(l, r);
+                }
+            }
+
+            int start = 0;
+            int preStart = -1;
+            int minTaps = 0;
+            while (start < n)
+            {
+                ++minTaps;
+                ++preStart;
+                //if (!taps.ContainsKey(start)) return -1;
+                //if (taps[start] == n) break;
+
+                int maxRight = start;
+                for (int i = 0; i <= start; i++)
+                {
+                    if (taps.ContainsKey(i) && taps[i] > maxRight)
+                    {
+                        maxRight = taps[i];
+                    }
+                }
+
+                if (maxRight == start) return -1;
+                preStart = start;
+                start = maxRight;
+            }
+                
+            return minTaps;
+        }
+    }
+}
+
+//V1.0
+/*
+        public int MinTaps(int n, int[] ranges)
+        {
+            SortedList<int, int> taps = new SortedList<int, int>();
             
             for (int i=0; i<ranges.Length; ++i)
             {
@@ -69,5 +119,6 @@ namespace Taps_Open_Water_Garden
             if (ll == 0 && rr == n) return taps.Count;
             return -1;
         }
-    }
-}
+ 
+ 
+ */
