@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "149_Max_Points_on_a_Line", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "149_Max_Points_on_a_LineTests", "149_Max_Points_on_a_LineTests\149_Max_Points_on_a_LineTests.csproj", "{C8FE45CD-C90D-4957-88C1-F693F33A6CA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1499_Max_Value_of_Equation", "1499_Max_Value_of_Equation\1499_Max_Value_of_Equation.csproj", "{F8CABD5F-C4DA-4C99-B714-44F6DD2E42E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1499_Max_Value_of_EquationTests", "1499_Max_Value_of_EquationTests\1499_Max_Value_of_EquationTests.csproj", "{CF07CDF2-F9AF-4C0F-B67B-DBBECBD36EC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{C8FE45CD-C90D-4957-88C1-F693F33A6CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8FE45CD-C90D-4957-88C1-F693F33A6CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8FE45CD-C90D-4957-88C1-F693F33A6CA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8CABD5F-C4DA-4C99-B714-44F6DD2E42E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8CABD5F-C4DA-4C99-B714-44F6DD2E42E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8CABD5F-C4DA-4C99-B714-44F6DD2E42E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8CABD5F-C4DA-4C99-B714-44F6DD2E42E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF07CDF2-F9AF-4C0F-B67B-DBBECBD36EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF07CDF2-F9AF-4C0F-B67B-DBBECBD36EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF07CDF2-F9AF-4C0F-B67B-DBBECBD36EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF07CDF2-F9AF-4C0F-B67B-DBBECBD36EC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
