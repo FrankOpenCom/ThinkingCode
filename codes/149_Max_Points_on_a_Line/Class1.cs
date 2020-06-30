@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
@@ -15,31 +16,53 @@ namespace _149_Max_Points_on_a_Line
         {
             if (points.Length <= 2) return points.Length;
 
-            Dictionary<(float k, float b), HashSet<(int x, int y)>> space = new Dictionary<(float k, float b), HashSet<(int x, int y)>>();
+            Dictionary<(int kn, int kd, int bn, int bd), HashSet<int>> space = new Dictionary<(int kn, int kd, int bn, int bd), HashSet<int>>();
             int maxPoints = 2;
 
             for (int f = 0; f<points.Length; ++f)
             {
                 for (int s=f+1; s<points.Length; ++s)
                 {
-                    // y = kx + b
-                    float k = float.NaN;
-                    float b = float.NaN;
-                    if (points[f][0] != points[s][0])
-                    {
-                        k = (points[f][1] - points[s][1]) / (points[f][0] - points[s][0]);
-                        b = points[f][1] - k * points[f][0];
-                    }
-                    else b = points[f][0];
+                    int kn = points[s][1] - points[f][1];
+                    int kd = points[s][0] - points[f][0];
+                    int bn = (points[s][0] - points[f][0]) * points[f][1] - (points[s][1] - points[f][1]) * points[f][0];
+                    int bd = points[s][0] - points[f][0];
 
-                    if (!space.ContainsKey((k, b)))
+                    if (kd == 0 && bd == 0)
                     {
-                        space[(k, b)] = new HashSet<(int x, int y)>();
+                        kd = points[s][0];
+                        bd = kd;
+                        kn = 0;
+                        bn = 0;
+                    }
+                    else if (kn == 0)
+                    {
+                        kn = points[s][1];
+                        bn = kn;
+                        kd = 0;
+                        kn = 0;
                     }
 
-                    space[(k, b)].Add((points[f][0], points[f][1]));
-                    space[(k, b)].Add((points[s][0], points[s][1]));
-                    if (space[(k, b)].Count > maxPoints) maxPoints = space[(k, b)].Count;
+                    bool found = false;
+                    foreach (KeyValuePair<(int kn, int kd, int bn, int bd), HashSet<int>> entry in space)
+                    {
+                        if ((kn == 0 && entry.Key.kn == 0 && kd == entry.Key.kd) || 
+                            (kd == 0 && entry.Key.kd == 0 && kn == entry.Key.kn) ||
+                            (kn * entry.Key.kd == kd * entry.Key.kn && bn * entry.Key.bd == bd * entry.Key.bn))
+                        {
+                            entry.Value.Add(f);
+                            entry.Value.Add(s);
+                            if (entry.Value.Count > maxPoints) maxPoints = entry.Value.Count;
+                            found = true;
+                            break;
+                        }
+                    }
+
+
+                    if (!found)
+                    {
+                        space[(kn, kd, bn, bd)] = new HashSet<int>() {f, s};
+                    }
                 }
             }
 
