@@ -16,39 +16,39 @@ namespace _149_Max_Points_on_a_Line
         {
             if (points.Length <= 2) return points.Length;
 
-            Dictionary<(int kn, int kd, int bn, int bd), HashSet<int>> space = new Dictionary<(int kn, int kd, int bn, int bd), HashSet<int>>();
+            Dictionary<(long kn, long kd, long bn, long bd), HashSet<int>> space = new Dictionary<(long kn, long kd, long bn, long bd), HashSet<int>>();
             int maxPoints = 2;
 
             for (int f = 0; f<points.Length; ++f)
             {
                 for (int s=f+1; s<points.Length; ++s)
                 {
-                    int kn = points[s][1] - points[f][1];
-                    int kd = points[s][0] - points[f][0];
-                    int bn = (points[s][0] - points[f][0]) * points[f][1] - (points[s][1] - points[f][1]) * points[f][0];
-                    int bd = points[s][0] - points[f][0];
+                    long kn = points[s][1] - points[f][1];
+                    long kd = points[s][0] - points[f][0];
+                    long bn = (points[s][0] - points[f][0]) * points[f][1] - (points[s][1] - points[f][1]) * points[f][0];
+                    long bd = points[s][0] - points[f][0];
 
                     if (kd == 0 && bd == 0)
                     {
                         kd = points[s][0];
                         bd = kd;
-                        kn = 0;
-                        bn = 0;
+                        kn = long.MaxValue;
+                        bn = long.MaxValue;
                     }
                     else if (kn == 0)
                     {
                         kn = points[s][1];
                         bn = kn;
-                        kd = 0;
-                        kn = 0;
+                        kd = long.MaxValue;
+                        bd = long.MaxValue;
                     }
 
                     bool found = false;
-                    foreach (KeyValuePair<(int kn, int kd, int bn, int bd), HashSet<int>> entry in space)
+                    foreach (KeyValuePair<(long kn, long kd, long bn, long bd), HashSet<int>> entry in space)
                     {
-                        if ((kn == 0 && entry.Key.kn == 0 && kd == entry.Key.kd) || 
-                            (kd == 0 && entry.Key.kd == 0 && kn == entry.Key.kn) ||
-                            (kn * entry.Key.kd == kd * entry.Key.kn && bn * entry.Key.bd == bd * entry.Key.bn))
+                        if ((kn == long.MaxValue && bn == long.MaxValue && entry.Key.kn == long.MaxValue && entry.Key.bn == long.MaxValue && kd == entry.Key.kd && bd == entry.Key.bd) || 
+                            (kd == long.MaxValue && bd == long.MaxValue && entry.Key.kd == long.MaxValue && entry.Key.bd == long.MaxValue && kn == entry.Key.kn && bn == entry.Key.bn) ||
+                            (kn * entry.Key.kd == kd * entry.Key.kn && bn * entry.Key.bd == bd * entry.Key.bn && kd != long.MaxValue && kn != long.MaxValue))
                         {
                             entry.Value.Add(f);
                             entry.Value.Add(s);
