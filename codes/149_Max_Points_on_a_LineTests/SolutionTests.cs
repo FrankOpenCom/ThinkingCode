@@ -21,6 +21,7 @@ namespace _149_Max_Points_on_a_Line.Tests
                 new int[] {3,3}
             };
             Assert.IsTrue(S.MaxPoints(points) == 3);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 3);
         }
 
         [TestMethod()]
@@ -36,6 +37,7 @@ namespace _149_Max_Points_on_a_Line.Tests
                 new int[] {1,4}
             };
             Assert.IsTrue(S.MaxPoints(points) == 4);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 4);
         }
 
         [TestMethod()]
@@ -48,6 +50,7 @@ namespace _149_Max_Points_on_a_Line.Tests
                 new int[] {0,0}
             };
             Assert.IsTrue(S.MaxPoints(points) == 3);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 3);
         }
 
         [TestMethod()]
@@ -61,6 +64,7 @@ namespace _149_Max_Points_on_a_Line.Tests
                 new int[] {3,10}
             };
             Assert.IsTrue(S.MaxPoints(points) == 4);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 4);
         }
 
         [TestMethod()]
@@ -73,8 +77,21 @@ namespace _149_Max_Points_on_a_Line.Tests
                 new int[] {94911151, 94911152}
             };
             Assert.IsTrue(S.MaxPoints(points) == 2);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 2);
         }
 
+        [TestMethod()]
+        public void MaxPointsTest0041()
+        {
+            Solution S = new Solution();
+            int[][] points = new int[][]{
+                new int[] {0,0},
+                new int[] {94911151, 94911150},
+                new int[] { 94911152, 94911151 }
+            };
+            Assert.IsTrue(S.MaxPoints(points) == 2);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 2);
+        }
 
         [TestMethod()]
         public void MaxPointsTest005()
@@ -86,6 +103,7 @@ namespace _149_Max_Points_on_a_Line.Tests
                 new int[] { 65536, 0}
             };
             Assert.IsTrue(S.MaxPoints(points) == 2);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 2);
         }
 
         [TestMethod()]
@@ -191,6 +209,7 @@ namespace _149_Max_Points_on_a_Line.Tests
                 new int[] {9,-17}
             };
             Assert.IsTrue(S.MaxPoints(points) == 6);
+            Assert.IsTrue(S.MaxPointsEnhence(points) == 6);
         }
     }
 }

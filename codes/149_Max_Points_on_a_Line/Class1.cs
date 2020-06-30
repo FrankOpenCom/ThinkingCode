@@ -68,5 +68,57 @@ namespace _149_Max_Points_on_a_Line
 
             return maxPoints;
         }
+
+
+
+        public int MaxPointsEnhence(int[][] points)
+        {
+            if (points.Length <= 2) return points.Length;
+            
+            Dictionary<Decimal, int> record = new Dictionary<Decimal, int>();
+            int max = 2;
+
+            for (int x = 0; x < points.Length; x++)
+            {
+                record.Clear();
+                int horizontalLine = 0;
+                int verticalLine = 0;
+                int duplicatedPoints = 0;
+                int count = 0;
+
+                for (int y = x+1; y < points.Length; y++)
+                {
+                    int diffX = points[y][0] - points[x][0];
+                    int diffY = points[y][1] - points[x][1];
+
+                    if (diffX == 0 && diffY == 0)
+                    {
+                        duplicatedPoints++;
+                    }
+                    else if (diffX == 0)
+                    {
+                        verticalLine++;
+                    }
+                    else if (diffY == 0)
+                    {
+                        horizontalLine++;
+                    }
+                    else
+                    {
+                        Decimal slope = (Decimal)diffY / diffX;
+                        if (record.ContainsKey(slope)) record[slope]++;
+                        else record[slope] = 1;
+
+                        if (record[slope] > count) count = record[slope];
+                    }
+                }
+
+                if (count < horizontalLine) count = horizontalLine;
+                if (count < verticalLine) count = verticalLine;
+                if (max < (count + duplicatedPoints + 1)) max = count + duplicatedPoints + 1;
+            }
+
+            return max;
+        }
     }
 }
