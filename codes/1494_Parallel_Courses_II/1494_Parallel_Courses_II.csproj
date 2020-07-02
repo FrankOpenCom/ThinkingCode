@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>_1494_Parallel_Courses_II</RootNamespace>
+  </PropertyGroup>
+
+</Project>
