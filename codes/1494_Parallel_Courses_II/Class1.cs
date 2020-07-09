@@ -18,6 +18,7 @@ namespace _1494_Parallel_Courses_II
             {
                 id = _id;
                 depth = 0;
+                heavy = int.MaxValue;
                 next = new List<int>();
                 prev = new List<int>();
             }
@@ -36,6 +37,15 @@ namespace _1494_Parallel_Courses_II
                 }
             }
 
+            public int Heavy
+            {
+                get => heavy;
+                set
+                {
+                    heavy = value;
+                }
+            }
+
             public ref List<int> Next
             {
                 get { return ref next; }
@@ -48,6 +58,7 @@ namespace _1494_Parallel_Courses_II
 
             private int id;
             private int depth;
+            private int heavy;
             private List<int> next;
             private List<int> prev;
 
@@ -86,7 +97,16 @@ namespace _1494_Parallel_Courses_II
                 UpdatePrev(ref courses, left);
             }
 
-            courses = courses.OrderByDescending(x => x.Depth).ThenByDescending(x => x.Next.Count).ToList();
+            for (int i=0; i< courses.Count; ++i)
+            {
+                foreach (int id in courses[i].Next)
+                {
+                    if (courses[id - 1].Prev.Count < courses[i].Heavy)
+                        courses[i].Heavy = courses[id - 1].Prev.Count;
+                }
+            }
+
+            courses = courses.OrderByDescending(x => x.Depth).ThenByDescending(x => x.Next.Count).ThenBy(x => x.Heavy).ToList();
 
             while (courses.Count > 0)
             {
