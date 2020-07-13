@@ -33,9 +33,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "765_Couples_Holding_Hands",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "765_Couples_Holding_HandsTests", "765_Couples_Holding_HandsTests\765_Couples_Holding_HandsTests.csproj", "{7A2D998B-84D4-4328-A5B5-7D52C246D439}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1489_Find_Critical_Pseudo_Critical_MST", "1489_Find_Critical_Pseudo_Critical_MST\1489_Find_Critical_Pseudo_Critical_MST.csproj", "{9FD65750-8987-4320-AE12-2DEA60AF452B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1489_Find_Critical_Pseudo_Critical_MST", "1489_Find_Critical_Pseudo_Critical_MST\1489_Find_Critical_Pseudo_Critical_MST.csproj", "{9FD65750-8987-4320-AE12-2DEA60AF452B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1489_Find_Critical_Pseudo_Critical_MSTTests", "1489_Find_Critical_Pseudo_Critical_MSTTests\1489_Find_Critical_Pseudo_Critical_MSTTests.csproj", "{F20B5447-1747-4365-A457-2987E3718363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1489_Find_Critical_Pseudo_Critical_MSTTests", "1489_Find_Critical_Pseudo_Critical_MSTTests\1489_Find_Critical_Pseudo_Critical_MSTTests.csproj", "{F20B5447-1747-4365-A457-2987E3718363}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1483_Kth_Ancestor_Tree_Node", "1483_Kth_Ancestor_Tree_Node\1483_Kth_Ancestor_Tree_Node.csproj", "{7EF96041-AE6B-46D8-863D-20331D7F3C06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1483_Kth_Ancestor_Tree_NodeTests", "1483_Kth_Ancestor_Tree_NodeTests\1483_Kth_Ancestor_Tree_NodeTests.csproj", "{96F052D8-93AC-4353-B75D-8617B3809D71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +115,14 @@ Global
 		{F20B5447-1747-4365-A457-2987E3718363}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F20B5447-1747-4365-A457-2987E3718363}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F20B5447-1747-4365-A457-2987E3718363}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF96041-AE6B-46D8-863D-20331D7F3C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF96041-AE6B-46D8-863D-20331D7F3C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF96041-AE6B-46D8-863D-20331D7F3C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF96041-AE6B-46D8-863D-20331D7F3C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96F052D8-93AC-4353-B75D-8617B3809D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F052D8-93AC-4353-B75D-8617B3809D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F052D8-93AC-4353-B75D-8617B3809D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F052D8-93AC-4353-B75D-8617B3809D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
