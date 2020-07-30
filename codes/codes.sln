@@ -43,6 +43,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1483_Kth_Ancestor_Tree_Node
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "70_Climbing_Stairs", "70_Climbing_Stairs\70_Climbing_Stairs.vcxitems", "{4A82BA69-F421-4EF3-94E0-F7A597145750}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "301_Remove_Invalid_Parentheses", "301_Remove_Invalid_Parentheses\301_Remove_Invalid_Parentheses.vcxproj", "{E44A009F-7294-4FF2-A1E2-7FF983980AA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -281,6 +283,16 @@ Global
 		{96F052D8-93AC-4353-B75D-8617B3809D71}.Release|x64.Build.0 = Release|Any CPU
 		{96F052D8-93AC-4353-B75D-8617B3809D71}.Release|x86.ActiveCfg = Release|Any CPU
 		{96F052D8-93AC-4353-B75D-8617B3809D71}.Release|x86.Build.0 = Release|Any CPU
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Debug|x64.ActiveCfg = Debug|x64
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Debug|x64.Build.0 = Debug|x64
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Debug|x86.ActiveCfg = Debug|Win32
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Debug|x86.Build.0 = Debug|Win32
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Release|Any CPU.ActiveCfg = Release|Win32
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Release|x64.ActiveCfg = Release|x64
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Release|x64.Build.0 = Release|x64
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Release|x86.ActiveCfg = Release|Win32
+		{E44A009F-7294-4FF2-A1E2-7FF983980AA2}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
